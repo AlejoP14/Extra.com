@@ -1,0 +1,35 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Catalogo {% endblock %} {% block contenido %} {% load static %}
+<br>
+
+
+<h3 class="m-5">Dejanos tu Comentario</h3>
+<div class="col-5 container">
+    <div class="row-4">
+        <form class="form-horizontal" action="{% url 'editarComentario' archivo.id%}" method="POST" role="form" >
+        {%csrf_token%}
+        <div class="col-md-5">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="{{archivo.nombre}}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo Electronico</label>
+            <input type="email" name="email" class="form-control" value="{{archivo.email}}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Comentario</label>
+            <textarea class="form-control" name="comentario" rows="3"  required>{{archivo.comentario}}</textarea>
+        </div>
+        <div class="form-actions text-right">
+            <input type="submit" value="Enviar" class="btn btn-outline-danger">
+        </div>
+        </form>
+    </div>
+    <br>
+</div>
+
+</div>
+
+{% endblock %}
+

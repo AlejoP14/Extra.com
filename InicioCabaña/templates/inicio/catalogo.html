@@ -1,0 +1,39 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Catalogo {% endblock %} {% block contenido %} {% load static %}
+<br>
+
+<div class="container" >
+    <h3>¡Promociones del Mes!</h3>
+    <p>
+    <div class="row m-5 ">
+        {% for registro in registros %}
+        <div class="col-sm-6" >
+            <div class="card" id="card2">
+                <img class="card-img-top" src="{{registro.imagen.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{registro.nombre}}</h5>
+                    <p class="card-text">{{registro.descripcion}}</p>
+                    <P class="card-text"></P>
+                    <img id="servicios" src="{% static 'img/dollar-sign-icon.svg' %}"> <b> Costo por dia: $</b>{{registro.costoDia}}</li><br><br>
+                    <img id="servicios" src="{% static 'img/man-woman-icon.svg' %}"> <b> Personas por cabaña: </b>{{registro.numPersonas}}</li><br><br>
+                    <img id="servicios" src="{% static 'img/single-bed-icon.svg' %}"> <b> Camas: </b>{{registro.numCamas}}</li><br><br>
+                    <img id="servicios" src="{% static 'img/pin-location-icon.svg' %}"> <b> Lugar: </b>{{registro.lugar}}</li><br><br>
+                    <h3>Contamos con servicios de:</h3>
+                    <ul>
+                        <img id="servicios" src="{% static 'img/food-takeout-icon.png' %}"> <b> Cocina: </b>{{registro.Cocina}}</li><br><br>
+                        <img id="servicios" src="{% static 'img/shower-curtain-icon.svg' %}" > <b> Baño: </b> {{registro.Baño}}</li><br><br>
+                        <img id="servicios" src="{% static 'img/wifi-location-icon.svg' %}"> <b> Wifi: </b> {{registro.Wifi}}</li><br><br>
+                        <img id="servicios" src="{% static 'img/calling-icon.svg' %}"> <b> Telefono: </b> {{registro.Telefono}}</li><br><br>
+                        <img id="servicios" src="{% static 'img/screen-icon.svg' %}"> <b> Televisión: </b> {{registro.Televisor}}</li><br><br>
+                        <img id="servicios" src="{% static 'img/health-and-safety-color-icon.svg' %}"> <b> Primeros Auxilios: </b> {{registro.Botiquin}}</li><br><br>
+                        <img id="servicios" src="{% static 'img/high-temperature-icon.svg' %}"> <b> Calefaccion: </b> {{registro.Calefaccion}}</li><br><br>
+                        <img id="servicios" src="{% static 'img/fire-extinguisher-icon.svg' %}"> <b> Proteccion contra incendios: </b> {{registro.Extinguidor}}</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+  
+</div>
+
+{% endblock %}

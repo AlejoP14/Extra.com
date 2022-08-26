@@ -1,0 +1,48 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Inicio {% endblock %} {% block contenido %}
+
+<br><br>
+<div class="container">
+    <h3>Bienvenido a Mi Cabaña.com</h3>
+    <img class="m-2" src="https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_960_720.jpg" align="right" width="506">
+    <h4>¿una escapada de verano?</h4> 
+    </p> Bienvenidos a las cabañas de Mi Cabaña.com, donde encontrarás la cabaña que estás buscando para tus vacaciones. </p>
+    <p>
+    Contamos con Renta de Cabañas a los alrededores de Monterrey Nuevo León Cabañas Totalmente equipadas y cabañas rusticas, cerca de la ciudad, o en medio del bosque lejos de todo. Áreas de Campamento con vista a la Sierra Madre.
+    <br>
+    Escápate de la Ciudad el Fin de semana y ven a Contemplar atardeceres mágicos, aprecia el amanecer desde las montañas, sal de la rutina y seguro tendrás nuevas aventuras.
+     ¡Tendrás excelentes anécdotas que contarles a tus amigos y bellos recuerdos con tu familia!
+    
+    Nuestras Cabañas Están disponibles todo el año, te recomendamos reservar con tiempo en temporada alta como Semana Santa, Vacaciones y días festivos.
+    </p>
+  </div><br><br><br><br>
+
+  <div class="newsletter parallax">
+    <div class="contenido contenedor">
+      <h3>MiCabaña.COM</h3>
+      <a href="{% url 'catalogo' %}" class="button transparente">Ir al Catalogo</a>
+    </div>
+  </div>
+<br><br>
+
+<div class="container">
+    <h3>¡Promociones del Mes!</h3>
+    <p>
+    <div class="row">
+        {% for registro in registros %}
+        <div class="col-sm-4" >
+            <div class="card" id="card1">
+                <img class="card-img-top" src="{{registro.imagen.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{registro.nombre}}</h5>
+                    <p class="card-text">{{registro.descripcion}}</p>
+                    <a href="{% url 'catalogo' %}" class="btn btn-primary">Ir al Catalogo</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+       
+       
+    </p>
+</div>
+
+{% endblock %}

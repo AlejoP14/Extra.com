@@ -1,0 +1,15 @@
+{% extends "inicio/encabezado.html" %} {% block titulo %} Catalogo {% endblock %} {% block contenido %} {% load static %}
+<br>
+
+
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="alert alert-danger alert-dismissible fade show" style="margin-right: 350px; margin-left: 150px;" role="alert">
+        <strong>¿Estas seguro de eliminar Este Comentario?</strong>
+    <button type="submit" class="btn btn-danger">Si</button>
+    <a href="{% url 'consultasSQL' %}" class="btn btn-primary">No</a>
+</form>
+
+{% endblock %}
+
