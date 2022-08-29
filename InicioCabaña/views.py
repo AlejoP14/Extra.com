@@ -45,7 +45,7 @@ def eliminar(request, id, confirmacion = 'inicio/Eliminacion.html'):
 
 def consultarComentario(request, id):
     archivo = Archivos.objects.get(id=id)
-    return render(request, 'inicio/editarComentario.html', {'archivo': archivo})
+    return render(request, 'inicio/EditarComentario.html', {'archivo': archivo})
 
 # Editar
 def editarComentario(request, id):
